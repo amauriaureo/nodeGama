@@ -14,9 +14,18 @@ const port = 3000;
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
+  res.end('Hello World! Im Amauri');
 });
 
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
+
+// acesse a pasta onde o arquivo está através do terminal e lance o comando:
+// node app.js
+// the file will run
+
+//digite isso no seu navegador:
+// http://localhost:3000/
+// Vc terá um Hello World na sua tela!
+// para parar o comando no terminal => Ctrl + C
