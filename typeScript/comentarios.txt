@@ -1,0 +1,8 @@
+// typeScript é um pacote gerenciado pelo npm
+// npm init [package.json]
+// npx tsc --init [criou tsconfig.json] que é o arquivo de configuração do js -> descomentei a linha
+// 17 e 18 do arquivo para dizer ao typescript: quando estiver compilando os códigos e gerando o js,
+// busque na pasta "rootDir": "./" e gere o resultado na pasta "outDir": "./dist/".
+// para o typescript começar a compilação(ele compial enquanto você escreve): npx tsc --watch
+//npm install @types/node
+//npm i query-string
