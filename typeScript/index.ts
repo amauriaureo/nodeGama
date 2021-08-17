@@ -1,7 +1,7 @@
 // Importacao de bibliotecas
 import { parse } from 'query-string';
 import * as url from 'url';
-import { writeFile } from 'fs';
+import { writeFile, readFile, unlink } from 'fs';
 import { createServer, IncomingMessage, ServerResponse } from 'http';
 
 // Definicao de porta
@@ -31,6 +31,33 @@ const server = createServer((request: IncomingMessage, response: ServerResponse)
             response.end(resposta);
           });
     }      
+
+            // Selecionar usuario
+            else if(urlparse.pathname == '/selecionar-usuario') {
+            readFile('users/' + params.id + '.txt', function (err: any, data) {
+            resposta = data;
+            console.log("Found")
+            
+            response.statusCode = 200; 
+            response.setHeader('Content-Type', 'application/json');
+            response.end(resposta);
+            });
+        }
+
+            // Remover usuario
+            else if(urlparse.pathname == '/remover-usuario') {
+                unlink('users/' + params.id + '.txt', function (err) {
+                console.log('File deleted!');
+
+                resposta = err ? "Usuario nao encontrado" : "Usuario removido.";
+
+                response.statusCode = 200; 
+                response.setHeader('Content-Type', 'text/plain');
+                response.end(resposta);
+            });
+  
+  }
+
 
     // response.end("Hello World");
     // Implementar o código aqui.

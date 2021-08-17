@@ -45,6 +45,26 @@ var server = http_1.createServer(function (request, response) {
             response.end(resposta);
         });
     }
+    // Selecionar usuario
+    else if (urlparse.pathname == '/selecionar-usuario') {
+        fs_1.readFile('users/' + params.id + '.txt', function (err, data) {
+            resposta = data;
+            console.log("Found");
+            response.statusCode = 200;
+            response.setHeader('Content-Type', 'application/json');
+            response.end(resposta);
+        });
+    }
+    // Remover usuario
+    else if (urlparse.pathname == '/remover-usuario') {
+        fs_1.unlink('users/' + params.id + '.txt', function (err) {
+            console.log('File deleted!');
+            resposta = err ? "Usuario nao encontrado" : "Usuario removido.";
+            response.statusCode = 200;
+            response.setHeader('Content-Type', 'text/plain');
+            response.end(resposta);
+        });
+    }
     // response.end("Hello World");
     // Implementar o código aqui.
 });
