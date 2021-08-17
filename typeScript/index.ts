@@ -46,7 +46,7 @@ const server = createServer((request: IncomingMessage, response: ServerResponse)
 
             // Remover usuario
             else if(urlparse.pathname == '/remover-usuario') {
-                unlink('users/' + params.id + '.txt', function (err) {
+                unlink('users/' + params.id + '.txt', function (err: any) {
                 console.log('File deleted!');
 
                 resposta = err ? "Usuario nao encontrado" : "Usuario removido.";
@@ -56,7 +56,7 @@ const server = createServer((request: IncomingMessage, response: ServerResponse)
                 response.end(resposta);
             });
   
-  }
+    }
 
 
     // response.end("Hello World");
