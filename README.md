@@ -1,6 +1,6 @@
 # nodeGama
 ### roteiro:
 * Hello World;
-* Arquitetura;
-* Hands-on;
+* Continuação prática JS;
+* NodeJS com Typescript;
 
