@@ -1,0 +1,27 @@
+{
+  "name": "pergunta-resposta-nodejs",
+  "version": "1.0.0",
+  "description": "Pacote para testa o funcionamento do NPM.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amauriaureo/nodeGama.git"
+  },
+  "keywords": [
+    "url",
+    "pergunta",
+    "resposta"
+  ],
+  "author": "Amauri Rodrigues",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amauriaureo/nodeGama/issues"
+  },
+  "homepage": "https://github.com/amauriaureo/nodeGama#readme",
+  "dependencies": {
+    "query-string": "^7.0.1"
+  }
+}
